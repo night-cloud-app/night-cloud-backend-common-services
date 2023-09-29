@@ -1,6 +1,6 @@
-﻿using Middlewares.ExceptionHandling.Exceptions;
+﻿using NightCloud.Common.Middlewares.ExceptionHandling.Exceptions;
 
-namespace Services.Authentication;
+namespace NightCloud.Common.Services.Authentication;
 
 public class InvalidUserIdHeaderBadRequestException : BadRequestException
 {

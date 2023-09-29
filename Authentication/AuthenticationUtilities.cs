@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace Services.Authentication;
+namespace NightCloud.Common.Services.Authentication;
 
 public static class AuthenticationUtilities
 {
