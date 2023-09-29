@@ -20,11 +20,11 @@ jobs:
       run: | 
         echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_ENV
     - name: Build
-      run: dotnet build Common.Services.sln --configuration Release /p:Version=${{ env.VERSION }} -p:PackageID=NightCloud.Common.Services
+      run: dotnet build NightCloud.Common.Services.sln --configuration Release /p:Version=${{ env.VERSION }} -p:PackageID=NightCloud.Common.Services
     - name: Test
-      run: dotnet test Common.Services.sln --configuration Release /p:Version=${{ env.VERSION }} -p:PackageID=NightCloud.Common.Services --no-build 
+      run: dotnet test NightCloud.Common.Services.sln --configuration Release /p:Version=${{ env.VERSION }} -p:PackageID=NightCloud.Common.Services --no-build 
     - name: Pack
-      run: dotnet pack Common.Services.sln --configuration Release /p:Version=${{ env.VERSION }} -p:PackageID=NightCloud.Common.Services --no-build --output ./nuget-packages 
+      run: dotnet pack NightCloud.Common.Services.sln --configuration Release /p:Version=${{ env.VERSION }} -p:PackageID=NightCloud.Common.Services --no-build --output ./nuget-packages 
     - name: Push
       run: | 
         for file in $(find ./nuget-packages -type f -name "*.nupkg"); do
